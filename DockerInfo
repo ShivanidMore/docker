@@ -47,6 +47,13 @@ Difference Exec and Attach?
 
 bindmount
 
+Docker volume -> sync container data with  local m/c. sync two  or more container with each other
+ docker volume create volume1
+docker volume ls
+docker volume rm volume1
+docker volume inspect volume1
+docker volume prune
+
 Dockerfile Creation
  vi Dockerfile 
 
