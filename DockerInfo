@@ -1,0 +1,47 @@
+Install Docker
+ Docker Host, Docker Daemon, docker client, Docker hub
+ Docker Images, Container
+
+Command
+
+ pwd
+ whoami
+ sudo yum install docker -y
+ sudo systemctl start docker
+ sudo systemctl status docker
+ docker -v
+ sudo docker pull hello-world
+ sudo docker images
+ sudo docker rmi hello-world
+ sudo docker image ls
+ sudo docker rmi hello-world:latest
+ sudo docker ps
+ sudo docker ps -a
+ sudo docker rmi -f hello-world
+ docker rm contid1, contid2
+ docker search imgname
+ docker start contid
+ docker kill contid
+ docker run -it ubuntu:18.04 bash
+ ctrl + d -> exit form container and container stop
+ ctrl + pq -> exit from container and background container is in running
+ docker stop contid
+docker stats        -> cpu, memory info about container
+docker stats contid
+docker info        -> all docker info i.e. insall, running stop container, images, installation, os etc
+docker inspect contid -> details about container ie.network, cpu, memory, IPAddress
+sudo docker run -it centos:8 ping localhost -c 10
+docker logs 75a743200
+docker system prune -a -f
+Docker Info images, container all stored in -> /var/lib/docker
+docker run -itd centos:8 ping localhost  -> detach mode i.e. at background
+docker exec contid bash  -> run the container with different command
+docker run -it --name shivani ubuntu:20.04 bash
+docker rename 75a743200ee0 test
+docker commit 104baed8db0e ubuntu:new
+docker run -itdp 80:80 httpd
+docker cp index.html e0eea9066eef:/usr/local/apache2/htdocs/          -> copy from m/c to container
+docker cp e0eea9066eef:/usr/local/apache2/htdocs/ .                   -> copy from container to m/c
+
+Difference Exec and Attach?
+
