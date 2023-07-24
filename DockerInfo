@@ -45,3 +45,30 @@ docker cp e0eea9066eef:/usr/local/apache2/htdocs/ .                   -> copy fr
 
 Difference Exec and Attach?
 
+bindmount
+
+Dockerfile Creation
+ vi Dockerfile 
+
+    FROM ubuntu:18.04
+MAINTAINER shivani-31245
+WORKDIR /tmp
+RUN apt-get update -y
+RUN apt-get install tree vim apache-2 curl -y
+RUN echo "Simple Dockerfile for practise" >> /tmp/simple.xml
+RUN mkdir simply 9
+ENV name shivani
+ENV java_home /tmp/java
+COPY /mnt/sample.war /tmp
+ADD /abc.tar.gz /tmp
+CMD ping localhost -c 20       //shell format
+ENTRYPOINT ["ping","localhost","-c","10"]      //exec format
+RUN service apache-2 restart
+COPY /mnt/index.html /var/www/html
+EXPOSE 80
+RUN echo "localhost" >> /etc/apache2/apache2.conf9
+ENTRYPOINT ["/usr/sbin/apache2ctl","-D","FOREGROUND"]
+  
+"These Dockerfile written in rooot user ie. sudo su - in /mnt folder"
+
+docker build -t ubuntu-1:1.1 . -> it create the ubuntu-1 image with tag 1.1 then we create a container using image run command
