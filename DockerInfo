@@ -75,6 +75,9 @@ COPY /mnt/index.html /var/www/html
 EXPOSE 80
 RUN echo "localhost" >> /etc/apache2/apache2.conf9
 ENTRYPOINT ["/usr/sbin/apache2ctl","-D","FOREGROUND"]
+sed -i "s|shivani|aws|g" testnew   -> It replace shivani with aws in testnew file
+
+docker logs contid
   
 "These Dockerfile written in rooot user ie. sudo su - in /mnt folder"
 
